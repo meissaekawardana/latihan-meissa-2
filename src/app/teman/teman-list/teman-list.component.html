@@ -1,0 +1,31 @@
+<table class="table table-bordered table-striped table-condensed">
+<thead>
+    <tr>
+      <th>
+        No
+      </th>
+      <th>
+          Nama
+        </th>
+      <th>
+        Email
+      </th>
+      <th>
+        Contact
+      </th>
+      <th>
+        Action
+      </th>
+    </tr>
+  </thead>
+<tbody>
+  <tr *ngFor="let t of temanParent; let i=index" [appHoverHighlight]="{background:'coral', text:'white'}">
+    <td>{{ i + 1}}</td>
+    <td>{{ t.nama }}</td>
+    <td>{{ t.email }}</td>
+    <td>{{ t.contact }}</td>
+    <td><button (click)="showname(i)" >edit</button> </td>
+    <td></td>
+    </tr>
+</tbody>
+</table>

@@ -1,0 +1,57 @@
+<br>
+<br>
+<br>
+<br>
+<form [formGroup]="contactForm" (ngSubmit)="kirim()">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+        <div class="form-row align-items-center">
+          <div class="col-sm-2">
+            <label class="sr-only">Nomor ISBN</label>
+            <input type="number" class="form-control mb-2" [formControlName]="'isbn'" id="ISBN" placeholder="Masukan Nomor ISBN" >
+            <span *ngIf="!contactForm.get('isbn').valid && contactForm.get('isbn').touched" class='help-block'>
+                <span *ngIf="contactForm.get('isbn').errors['required']">
+                  Wajib Diisi !
+                </span> 
+                <span *ngIf="contactForm.get('isbn').errors['blank']">
+                  Tidak Boleh Kosong !
+                </span>
+              </span>
+
+          </div>
+          <div class="col-sm-5">
+            <label class="sr-only">Nama Buku</label>
+            <input type="text" class="form-control mb-2" [formControlName]="'nama_buku'"  id="nama_buku" placeholder="Masukan Nama" >
+            <span *ngIf="!contactForm.get('nama_buku').valid && contactForm.get('nama_buku').touched" class='help-block'>
+                <span *ngIf="contactForm.get('nama_buku').errors['required']">
+                  Wajib Diisi !
+                </span> 
+                <span *ngIf="contactForm.get('nama_buku').errors['blank']">
+                  Tidak Boleh Kosong !
+                </span>
+              </span>
+
+          </div>
+          <div class="col-sm-3">
+            <label class="sr-only">Jumlah</label>
+            <input type="number" class="form-control mb-2" [formControlName]="'qty'"  id="qty" placeholder="Masukan Jumlah Buku" >
+            <span *ngIf="!contactForm.get('qty').valid && contactForm.get('qty').touched" class='help-block'>
+                <span *ngIf="contactForm.get('qty').errors['required']">
+                  Wajib Diisi !
+                </span> 
+                <span *ngIf="contactForm.get('qty').errors['blank']">
+                  Tidak Boleh Kosong !
+                </span>
+              </span>
+
+          </div>
+          <div class="col-sm-1">
+            <button type="button" class="btn btn-success mb-2" >Pilih</button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+</form>
+
